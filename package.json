@@ -2,14 +2,20 @@
   "name": "bacnet-enums",
   "version": "0.0.2",
   "description": "BACnet enums",
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 6.9.0"
+  },
   "main": "dist/bacnet-enums.js",
   "scripts": {
-    "test": "gulp",
-    "lint": "gulp lint",
-    "test-browser": "gulp test-browser",
-    "watch": "gulp watch",
-    "build": "gulp build",
-    "coverage": "gulp coverage"
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "watch": "tsc -w -p tsconfig.release.json",
+    "lint": "tslint -t stylish --project \"tsconfig.json\"",
+    "pretest": "npm run lint",
+    "test": "npm run test-only",
+    "test-only": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -23,35 +29,16 @@
   },
   "homepage": "https://github.com/ryanluton/bacnet-enums",
   "devDependencies": {
-    "babel-core": "6.14.0",
-    "babel-loader": "6.2.5",
-    "babel-polyfill": "6.13.0",
-    "babel-preset-latest": "6.14.0",
-    "babel-register": "6.14.0",
-    "chai": "3.5.0",
-    "del": "2.2.2",
-    "glob": "7.0.6",
-    "gulp": "3.9.1",
-    "gulp-eslint": "3.0.1",
-    "gulp-filter": "4.0.0",
-    "gulp-istanbul": "1.1.1",
-    "gulp-livereload": "3.8.1",
-    "gulp-load-plugins": "1.2.4",
-    "gulp-mocha": "3.0.1",
-    "gulp-plumber": "1.1.0",
-    "gulp-rename": "1.2.2",
-    "gulp-sourcemaps": "1.6.0",
-    "gulp-uglify": "2.0.0",
-    "isparta": "4.0.0",
-    "json-loader": "0.5.4",
-    "mocha": "3.0.2",
-    "sinon": "1.17.5",
-    "sinon-chai": "2.8.0",
-    "webpack": "1.13.2",
-    "webpack-stream": "3.2.0"
+    "@types/jest": "~21.1.5",
+    "@types/node": "~6.0.90",
+    "jest": "~21.2.1",
+    "rimraf": "~2.6.2",
+    "tslint": "~5.8.0",
+    "tslint-microsoft-contrib": "~5.0.1",
+    "tsutils": "~2.12.1",
+    "typescript": "~2.5.3"
   },
-  "babelBoilerplateOptions": {
-    "entryFileName": "bacnet-enums.js",
-    "mainVarName": "bacnetEnums"
-  }
+    "dependencies": {
+      "tslib": "~1.8.0"
+    }
 }
