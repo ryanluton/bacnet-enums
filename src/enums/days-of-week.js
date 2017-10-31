@@ -6,7 +6,7 @@ const daysOfWeek = {
   friday: 4,
   saturday: 5,
   sunday: 6,
-  max_bacnet_days_of_week: 7
+  maxDaysOfWeek: 7
 };
 
 export default daysOfWeek;
