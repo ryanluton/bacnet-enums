@@ -16,7 +16,7 @@ currently includes
 - [Reliability](https://github.com/ryanluton/bacnet-enums/blob/master/src/enums/reliability.ts)
 - [Restart Reason](https://github.com/ryanluton/bacnet-enums/blob/master/src/enums/restart-reason.ts)
 - [Services Supported](https://github.com/ryanluton/bacnet-enums/blob/master/src/enums/services-supported.ts)
-- [Unit Id](https://github.com/ryanluton/bacnet-enums/blob/master/src/enums/unit-id.ts)
+- [Units Id](https://github.com/ryanluton/bacnet-enums/blob/master/src/enums/units-id.ts)
 - [Vendor Id](https://github.com/ryanluton/bacnet-enums/blob/master/src/enums/vendor-id.ts)
 - [Write Priority](https://github.com/ryanluton/bacnet-enums/blob/master/src/enums/write-priority.ts)
 
@@ -40,7 +40,7 @@ const bacnetEnums = require('bacnet-enums');
 import * as bacnetEnums from 'bacnet-enums';
 
 // import specific enums
-import { ObjectType, PropertyId } from 'bacnet-enums';
+import { ObjectType } from 'bacnet-enums';
 
 const type = ObjectType[8];
 console.log(type); // device
