@@ -54,13 +54,22 @@ const enum ObjectType {
   alertEnrollment = 52, // addendum 2010-af
   channel = 53, // addendum 2010-aa
   lightingOutput = 54, // addendum 2010-i
+  networkPort = 56,
   // Enumerated values 0-127 are reserved for definition by ASHRAE.
   // Enumerated values 128-1023 may be used by others subject to
   // the procedures and constraints described in Clause 23.
+  dataExchangeSettings = 142,
+  eventAndAlarmSettings = 152,
+  analogOutputConfiguration = 177,
+  binaryDeviceConfiguration = 178,
+  databaseInformation = 181,
+  priorityArrayNames = 266,
 
   /////// DELTA proprietary objects.
   internetProtocolSettings = 311,
-
+  ioMapping = 323,
+  multistateOutputConfiguration = 329,
+  accessEventLog = 403,
   //   do the max range inside of enum so that
   //   compilers will allocate adequate sized datatype for enum
   //   which is used to store decoding
